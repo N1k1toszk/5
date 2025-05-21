@@ -10,8 +10,8 @@ if (!empty($_SESSION['login'])) {
 $messages = [];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $login = $_POST['login'] ?? '';
-    $pass = $_POST['pass'] ?? '';
+    $login = $_POST['username'] ?? '';
+    $pass = $_POST['password'] ?? '';
 
     try {
         $stmt = $pdo->prepare("SELECT * FROM applications WHERE login = ?");
